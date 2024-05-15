@@ -1,0 +1,73 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #333;
+}
+
+/* BotCollection and YourBotArmy styles */
+
+div {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+button {
+  padding: 5px 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: #fff;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* BotSpecs styles */
+
+select {
+  padding: 5px;
+  margin: 5px;
+}
+
+/* SortBar styles */
+
+label {
+  margin-right: 10px;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+  .container {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  div {
+    margin: 10px 0;
+  }
+}
