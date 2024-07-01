@@ -12,9 +12,11 @@ with app.app_context():
         {'name': 'za', 'email': 'camirzaki194@gmail.com'}
     ]
 
+    student_instances = []
     for student_data in students:
         student = Student(**student_data)
         db.session.add(student)
+        student_instances.append(student)
 
     # Commit students to get their IDs
     db.session.commit()
@@ -27,18 +29,20 @@ with app.app_context():
         {'name': 'huss', 'email': 'smabo234@gmail.com', 'department': 'computer'}
     ]
 
+    teacher_instances = []
     for teacher_data in teachers:
         teacher = Teacher(**teacher_data)
         db.session.add(teacher)
+        teacher_instances.append(teacher)
 
     # Commit teachers to get their IDs
     db.session.commit()
 
     # Now create courses using the IDs of students and teachers
     courses = [
-        {'name': 'Mathematics 101', 'specialization': 'Mathematics', 'grade': 'A', 'student_id': students[0].id, 'teacher_id': teachers[0].id},
-        {'name': 'Mathematics 102', 'specialization': 'Mathematics3', 'grade': 'B', 'student_id': students[1].id, 'teacher_id': teachers[1].id},
-        {'name': 'Networking', 'specialization': 'Networking', 'grade': 'C', 'student_id': students[2].id, 'teacher_id': teachers[2].id},
+        {'name': 'Mathematics 101', 'specialization': 'Mathematics', 'grade': 'A', 'student_id': student_instances[0].id, 'teacher_id': teacher_instances[0].id},
+        {'name': 'Mathematics 102', 'specialization': 'Mathematics3', 'grade': 'B', 'student_id': student_instances[1].id, 'teacher_id': teacher_instances[1].id},
+        {'name': 'Networking', 'specialization': 'Networking', 'grade': 'C', 'student_id': student_instances[2].id, 'teacher_id': teacher_instances[2].id},
         # Add more courses if needed
     ]
 
@@ -51,6 +55,7 @@ with app.app_context():
     db.session.commit()
 
 print("Seed data added successfully.")
+
 
 
     
